@@ -1,4 +1,5 @@
-const CLIENT_ID = String(import.meta.env.VITE_DERIV_APP_ID || '').trim();
+const REGISTERED_CLIENT_ID = '345tXaQ3o45OhOLPPqKES';
+const CLIENT_ID = String(import.meta.env.VITE_DERIV_APP_ID || REGISTERED_CLIENT_ID).trim();
 
 // OptaFX uses the registered production root as its single OAuth callback.
 // Keeping this fallback fixed prevents Vercel preview URLs from accidentally
