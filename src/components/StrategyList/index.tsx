@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { StrategyList as LegacyStrategyList } from './LegacyStrategyList';
 import './styles.scss';
 
 const actions = [
@@ -18,42 +17,26 @@ export function StrategyList() {
         <h1>Hello Trader<span>!</span></h1>
         <p>💎 Patience is a trader&apos;s hidden advantage.</p>
       </section>
-
       <div className="opta-section-line" />
-
       <section className="opta-actions" aria-label="Trading tools">
         {actions.map((action) => (
           <Link key={action.title} to={action.path} className={`opta-action-card opta-action-card--${action.tone}`}>
             <span className="opta-action-card__icon">{action.icon}</span>
-            <span className="opta-action-card__copy">
-              <strong>{action.title}</strong>
-              <small>{action.description}</small>
-            </span>
+            <span className="opta-action-card__copy"><strong>{action.title}</strong><small>{action.description}</small></span>
             <span className="opta-action-card__arrow">-&gt;</span>
           </Link>
         ))}
       </section>
-
       <section className="opta-bot-status">
-        <div>
-          <span className="opta-status-dot" />
-          <strong>Bot control</strong>
-          <small>Ready to trade</small>
-        </div>
+        <div><span className="opta-status-dot" /><strong>Bot control</strong><small>Ready to trade</small></div>
         <div className="opta-controls" aria-label="Bot controls">
-          <button type="button" disabled>▶ Start</button>
-          <button type="button" disabled>Ⅱ Pause</button>
-          <button type="button" disabled>↻ Resume</button>
-          <button type="button" disabled>■ Stop</button>
+          <Link to="/bots">▶ Start</Link><Link to="/bots">Ⅱ Pause</Link><Link to="/bots">↻ Resume</Link><Link to="/bots">■ Stop</Link>
         </div>
       </section>
-
       <section className="opta-testimonial">
         <h2>WHAT TRADERS ARE SAYING</h2>
         <div className="opta-quote">★★★★★<br /><em>“A clean place to build, test and manage automated trading strategies.”</em><br /><strong>OptaFX</strong></div>
       </section>
-
-      <LegacyStrategyList />
     </div>
   );
 }
